@@ -14,7 +14,9 @@ public class Student1Test {
         System.out.println("Course: " + defaultStudent.getCourse());
         System.out.println("Speciality: " + defaultStudent.getSpeciality());
         System.out.println("Budget: " + defaultStudent.isBudget());
-        System.out.println("Education cost: " + defaultStudent.countPrice(defaultStudent.isBudget()));
+        System.out.println("Education cost: " + defaultStudent.getPrice());
+        defaultStudent.setPrice();
+        System.out.println("Education cost: " + defaultStudent.getPrice());
         System.out.println();
 
         Student student = new Student("Roman");
@@ -25,10 +27,11 @@ public class Student1Test {
         System.out.println("Surname: " + student.getSurname());
         student.setAge(25);
         System.out.println("Age: " + student.getAge());
-        System.out.println("Speciality: " + student.getSpeciality());
-        System.out.println("Education cost: " + student.countPrice(student.isBudget()));
+        System.out.println("Education cost: " + student.getPrice());
+        student.setBudget(false);
+        student.setPrice();
+        System.out.println("Education cost: " + student.getPrice());
         System.out.println();
-
 
         Student student2 = new Student("Olga", "Andreychenko");
         System.out.println("Surname: " + student2.getSurname());
@@ -37,7 +40,9 @@ public class Student1Test {
         student2.setSpeciality("Mathematics");
         System.out.println("Speciality: " + student2.getSpeciality());
         student2.setBudget(false);
-        System.out.println("Education cost: " + student2.countPrice(student2.isBudget()));
+        System.out.println("Education cost: " + student2.getPrice());
+        student2.setPrice();
+        System.out.println("Education cost: " + student2.getPrice());
         System.out.println();
 
 
@@ -45,20 +50,22 @@ public class Student1Test {
         System.out.println("Age: " + student3.getAge());
         System.out.println();
 
-        Student student4 = new Student("Anna", "Ogorodnik",25,5,"Informatics",true);
+        Student student4 = new Student("Anna", "Ogorodnik",25,6,"Computer Science",true);
         System.out.println("Name: " + student4.getName());
         System.out.println("Surname: " + student4.getSurname());
         System.out.println("Age: " + student4.getAge());
         System.out.println("Course: " + student4.getCourse());
         System.out.println("Speciality: " + student4.getSpeciality());
         System.out.println("Budget: " + student4.isBudget());
-        System.out.println("Price: " + student4.countPrice(student4.isBudget()));
+        student4.setPrice();
+        System.out.println("Price: " + student4.getPrice());
         System.out.println();
 
-
-
-
-
+        Student student5 = new Student("Oleksandr", "Zabrodsky", 24, 4, "Mathematics", true, 7800.05);
+        System.out.println("Price: " + student5.getPrice());
+        student5.setPrice();
+        System.out.println("Price: " + student5.getPrice());
+        System.out.println();
 
     }
 }

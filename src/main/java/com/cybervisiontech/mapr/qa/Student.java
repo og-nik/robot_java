@@ -8,8 +8,8 @@ public class Student {
     String name;
     String surname;
     int age;
-    int course;
-    String speciality = "Telecommunication";
+    int course = 1;
+    String speciality;
     boolean budget = true; // budget or contract type of education
     double price = 0.00; // price for education
 
@@ -29,7 +29,7 @@ public class Student {
         this.surname = surname;
     }
 
-    public Student(String name, String surname, int age, int course, String speciality,boolean budget) {
+    public Student(String name, String surname, int age, int course, String speciality, boolean budget) {
         this.name = name;
         this.surname = surname;
         this.age = age;
@@ -100,14 +100,24 @@ public class Student {
         this.budget = budget;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public double countPrice (boolean budget){
-        if (budget == false){
-            price = 5000.500;
+    public void setPrice() {
+        if (this.budget == false){
+            switch (course){
+                case 1: price = 5000.500;
+                    break;
+                case 2: price = 6000.500;
+                    break;
+                case 3: price = 5500.00;
+                    break;
+                case 4: price = 6500.00;
+                    break;
+                case 5: price = 7000.300;
+                    break;
+                case 6: price = 8000.600;
+                    break;
+            }
+        } else {
+            price = 0.00;
         }
-        return price;
     }
 }
