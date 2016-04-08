@@ -1,6 +1,5 @@
 package com.cybervisiontech.mapr.qa;
 
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -105,7 +104,7 @@ public class StudentJUnitTest {
 
         s6.setPrice();
         double price6New = s6.getPrice();
-        assertTrue("Should equal 0", price6New == 0);
+        assertTrue("Should be equal 0", price6New == 0);
         }
 
 

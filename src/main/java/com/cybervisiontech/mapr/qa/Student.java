@@ -100,6 +100,8 @@ public class Student {
         this.budget = budget;
     }
 
+    //Calculate the cost of education depends on the number of course
+
     public void setPrice() {
         if (this.budget == false){
             switch (course){
