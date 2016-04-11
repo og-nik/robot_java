@@ -15,6 +15,8 @@ import java.io.InputStream;
 import java.util.List;
 import java.util.Properties;
 
+import static org.junit.Assert.assertTrue;
+
 /**
  * Created by Анна on 11.04.2016.
  */
@@ -47,7 +49,8 @@ public class OlxBot {
     }
 
     @Test
-    public void login() {
+    public void loginTest() {
+        System.out.println("TEST CASE 1: Login");
         wait = new WebDriverWait(driver, 10);
         // Login field
         WebElement loginField = driver.findElement(By.id("userEmail"));
@@ -62,10 +65,20 @@ public class OlxBot {
         // Click Enter
         WebElement enterButton = driver.findElement(By.id("se_userLogin"));
         enterButton.click();
+
+        // Verify if login is successful (if there is "anna.imhr" text on the page)
+        String pageLoginText = driver.findElement(By.id("topLoginLink")).getText();
+        String loginProperty = applicationProps.getProperty("login");
+        String[] firstPart = loginProperty.split("@");
+        String checkTextLogin = firstPart[0];
+        assertTrue("FAILED: Text not found!", pageLoginText.contains(checkTextLogin));
+        System.out.println("PASSED: Login is successful.");
+        System.out.println();
     }
 
     @Test
     public void searchByKeyWordsTest(){
+        System.out.println("TEST CASE 2: Search by key words");
         wait = new WebDriverWait(driver, 10);
         // Go to Search page
         WebElement searchPage = driver.findElement(By.id("headerLogo"));
@@ -76,9 +89,17 @@ public class OlxBot {
         wait.until(ExpectedConditions.elementToBeClickable(searchField));
         searchField.sendKeys(applicationProps.getProperty("keyWords"));
         searchField.submit();
+
         // Display titles of all found advertisements
-        String titles = driver.findElement(By.xpath("//a/strong")).getText();
-        System.out.println(titles);
+        String text = applicationProps.getProperty("keyWords");
+        String title = driver.findElement(By.xpath("//a/strong")).getText();
+        assertTrue("FAILED: Text not found!", title.contains(text));
+        System.out.println("PASSED");
+        System.out.println();
+
+
+        //String titles = driver.findElement(By.xpath("//a/strong")).getText();
+        //System.out.println(titles);
     }
 
     @AfterClass
