@@ -27,6 +27,7 @@ public class OlxBot {
     WebDriverWait wait;
 
     @BeforeClass
+    // Read from project.properties file
     public static void readPropertiesFromFile(){
         applicationProps = new Properties();
         try (InputStream in = new FileInputStream("project.properties")){
@@ -90,22 +91,16 @@ public class OlxBot {
         searchField.sendKeys(applicationProps.getProperty("keyWords"));
         searchField.submit();
 
-        // Display titles of all found advertisements
-        String text = applicationProps.getProperty("keyWords");
-        String title = driver.findElement(By.xpath("//a/strong")).getText();
-        assertTrue("FAILED: Text not found!", title.contains(text));
-        System.out.println("PASSED");
-        System.out.println();
-
-
-        //String titles = driver.findElement(By.xpath("//a/strong")).getText();
-        //System.out.println(titles);
+        // Display titles of ALL found advertisements
+        List<WebElement> allTitles = driver.findElements(By.xpath(".//*/tbody/tr[1]/td[2]/div/h3/a/strong"));
+        for (int i = 0; i < allTitles.size(); i++){
+            System.out.println(allTitles.get(i).getText());
+        }
     }
 
     @AfterClass
     public static void tearDown(){
         driver.quit();
     }
-
 
 }
