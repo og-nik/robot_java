@@ -56,4 +56,23 @@ public class Car {
     public void setFull(boolean full) {
         isFull = full;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Car car = (Car) o;
+
+        if (speed != car.speed) return false;
+        return isFull == car.isFull;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = speed;
+        result = 31 * result + (isFull ? 1 : 0);
+        return result;
+    }
 }

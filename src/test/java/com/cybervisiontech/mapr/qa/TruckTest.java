@@ -44,4 +44,6 @@ public class TruckTest {
         assertTrue(car3.isFull() == true);
 
     }
+
+
 }
