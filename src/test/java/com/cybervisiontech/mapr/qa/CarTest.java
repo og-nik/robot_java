@@ -10,6 +10,8 @@ import static org.junit.Assert.*;
  */
 public class CarTest {
 
+    /**
+
     Car car;
     Car car2;
 
@@ -58,4 +60,5 @@ public class CarTest {
         assertNotNull(car.getSpeed());
         assertEquals(0, car.getSpeed());
     }
+    */
 }

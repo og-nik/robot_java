@@ -11,6 +11,8 @@ import static org.junit.Assert.assertTrue;
  */
 public class TruckTest {
 
+    /**
+
     Car car1;
     ElectroCar car2;
     Truck car3;
@@ -44,6 +46,8 @@ public class TruckTest {
         assertTrue(car3.isFull() == true);
 
     }
+
+    */
 
 
 }
