@@ -40,7 +40,7 @@ public class CarWash {
         System.out.println();
 
         c1.changeWheel(1);
-        c2.changeWheel(4);
+        c2.changeWheel(40);
         c3.changeWheel(2);
 
     }

@@ -7,9 +7,13 @@ public class Truck extends Car {
 
     @Override
     public void changeWheel(int correctWheelsNumber){
-        String className =Truck.class.getSimpleName();
-        System.out.println("Correct number of changed wheels for " +
-                className + ": " + correctWheelsNumber);
+        if (correctWheelsNumber >= 0 && correctWheelsNumber <= 4) {
+            String className = this.getClass().getSimpleName();
+            System.out.println("The number of changed wheels for " +
+                    className + ": " + correctWheelsNumber);
+        } else {
+            System.out.println("Incorrect number of wheels to change");
+        }
     }
 
     @Override

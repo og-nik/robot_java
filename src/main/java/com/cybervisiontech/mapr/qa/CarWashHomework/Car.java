@@ -9,7 +9,8 @@ public abstract class Car implements Washable {
     public int wheelsNumber;
 
     public void changeWheel(int wheelsNumber){
-        String className = Car.class.getName();
+        this.wheelsNumber = wheelsNumber;
+        String className = this.getClass().getName();
         System.out.println(className);
         System.out.println("Number of wheels: " + wheelsNumber);
     }
