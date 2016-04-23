@@ -5,6 +5,10 @@ package com.cybervisiontech.mapr.qa.CarWashHomework;
  */
 public class Truck extends Car {
 
+    public Truck(int carNumber, int wheelsNumber) {
+        super(carNumber, wheelsNumber);
+    }
+
     @Override
     public void changeWheel(int correctWheelsNumber){
         if (correctWheelsNumber >= 0 && correctWheelsNumber <= 4) {

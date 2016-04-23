@@ -16,9 +16,9 @@ public class CarWash {
 
     public static void main(String[] args) {
 
-        Car c1 = new Truck();
-        Car c2 = new ElectroCar();
-        Car c3 = new ElectroCar();
+        Car c1 = new Truck(333, 4);
+        Car c2 = new ElectroCar(222, 2);
+        Car c3 = new ElectroCar(4444, 4);
 
         Set<Washable> carsSet = new HashSet<Washable>();
         List<Washable> carsList = new ArrayList<Washable>();
