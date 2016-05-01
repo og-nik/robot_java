@@ -21,8 +21,8 @@ public abstract class Car implements Washable, Serializable {
                 '}';
     }
 
-    public String carNumber;
-    public int wheelsNumber;
+    private String carNumber;
+    private int wheelsNumber;
 
     public Car(String carNumber, int wheelsNumber) {
         this.carNumber = carNumber;
