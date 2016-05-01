@@ -21,10 +21,10 @@ public abstract class Car implements Washable, Serializable {
                 '}';
     }
 
-    public int carNumber;
+    public String carNumber;
     public int wheelsNumber;
 
-    public Car(int carNumber, int wheelsNumber) {
+    public Car(String carNumber, int wheelsNumber) {
         this.carNumber = carNumber;
         this.wheelsNumber = wheelsNumber;
     }
@@ -38,7 +38,7 @@ public abstract class Car implements Washable, Serializable {
 
     public static void save(String filename){
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filename))){
-            oos.writeObject(new ElectroCar(25567, 4));
+            oos.writeObject(new ElectroCar("OO1254FX", 4));
         } catch (FileNotFoundException fnfe){
             System.err.println("File not found");
         } catch (IOException ioe){

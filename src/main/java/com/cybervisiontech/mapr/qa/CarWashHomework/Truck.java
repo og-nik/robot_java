@@ -5,7 +5,7 @@ package com.cybervisiontech.mapr.qa.CarWashHomework;
  */
 public class Truck extends Car {
 
-    public Truck(int carNumber, int wheelsNumber) {
+    public Truck(String carNumber, int wheelsNumber) {
         super(carNumber, wheelsNumber);
     }
 

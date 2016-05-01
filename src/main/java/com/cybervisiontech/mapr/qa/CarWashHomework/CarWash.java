@@ -16,9 +16,9 @@ public class CarWash {
 
     public static void main(String[] args) {
 
-        Car c1 = new Truck(333, 4);
-        Car c2 = new ElectroCar(222, 2);
-        Car c3 = new ElectroCar(4444, 4);
+        Car c1 = new Truck("AA0739HH", 4);
+        Car c2 = new ElectroCar("AA0743HH", 4);
+        Car c3 = new ElectroCar("AA2205EX", 4);
 
         Set<Washable> carsSet = new HashSet<Washable>();
         List<Washable> carsList = new ArrayList<Washable>();
@@ -42,6 +42,8 @@ public class CarWash {
         c1.changeWheel(1);
         c2.changeWheel(40);
         c3.changeWheel(2);
+
+
 
     }
 
